@@ -1,0 +1,202 @@
+.main-block {
+  color: white;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .main {
+    width: clamp(70%, 80%, 90%);
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+
+    &.details-visible {
+      height: clamp(55%, 60vh, 100%);
+      justify-content: center;
+    }
+  }
+}
+
+.clock {
+  font-family: Inter, sans-serif;
+  font-weight: 700;
+  font-size: clamp(100px, 15vw, 200px);
+  line-height: clamp(100px, 15vw, 200px);
+  letter-spacing: clamp(-5px, -0.5vw, -2px);
+  vertical-align: bottom;
+  color: var(--text-color);
+}
+
+.quote {
+  gap: 10px;
+  width: clamp(300px, 40%, 90%);
+  min-width: unset;
+  font-family: Inter;
+  font-size: clamp(14px, 1.8vw, 18px);
+  line-height: clamp(20px, 2.5vw, 28px);
+  letter-spacing: 0;
+  vertical-align: bottom;
+  display: flex;
+  align-items: flex-start;
+
+  .P1 {
+    font-weight: 400;
+    margin: 0;
+  }
+  .P2 {
+    font-weight: 700;
+  }
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  .flex {
+    display: flex;
+    flex-direction: column;
+
+    .location {
+      font-family: Inter;
+      font-weight: 700;
+      font-size: clamp(18px, 2.5vw, 24px);
+      line-height: clamp(20px, 2.5vw, 28px);
+      letter-spacing: clamp(2px, 0.4vw, 4.8px);
+      vertical-align: bottom;
+      text-transform: uppercase;
+    }
+
+    .greeting {
+      font-family: Inter;
+      font-weight: 400;
+      font-size: clamp(16px, 2vw, 20px);
+      line-height: clamp(20px, 2.5vw, 28px);
+      letter-spacing: clamp(2px, 0.4vw, 4px);
+      vertical-align: bottom;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      img {
+        width: clamp(16px, 2vw, 24px);
+        height: clamp(16px, 2vw, 24px);
+        margin-right: clamp(4px, 0.8vw, 8px);
+      }
+    }
+  }
+}
+
+.More {
+  :hover {
+    cursor: pointer;
+  }
+  button {
+    border-radius: 28px;
+    width: clamp(100px, 12vw, 146px);
+    height: clamp(40px, 5vw, 56px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .rotated {
+      transform: rotate(180deg);
+    }
+
+    img {
+      width: clamp(24px, 3vw, 40px);
+      height: clamp(24px, 3vw, 40px);
+    }
+
+    p {
+      width: 100%;
+      font-family: Inter;
+      font-weight: 700;
+      font-size: clamp(12px, 1.5vw, 16px);
+      line-height: clamp(20px, 2.5vw, 28px);
+      letter-spacing: clamp(3px, 0.5vw, 5px);
+      vertical-align: bottom;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-block {
+    .main {
+      height: 60%;
+      width: 80%;
+    }
+  }
+
+  .clock {
+    font-size: clamp(120px, 12vw, 150px);
+    line-height: clamp(120px, 12vw, 150px);
+  }
+
+  .quote {
+    width: clamp(300px, 60%, 80%);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-block {
+    .main {
+      &.details-visible {
+        height: 100%;
+        justify-content: center;
+      }
+    }
+  }
+
+  .time {
+    flex-direction: column;
+    align-items: flex-start;
+    height: 70%;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-block {
+    .main {
+      width: 80%;
+    }
+  }
+
+  .clock {
+    font-size: clamp(100px, 10vw, 120px);
+    line-height: clamp(100px, 10vw, 120px);
+  }
+
+  .quote {
+    width: 85%;
+  }
+
+  .time {
+    height: 65%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-block {
+    .main {
+      &.details-visible {
+        height: 100%;
+        justify-content: center;
+      }
+    }
+  }
+
+  .quote {
+    width: 90%;
+  }
+
+  .time {
+    height: 60%;
+  }
+}
