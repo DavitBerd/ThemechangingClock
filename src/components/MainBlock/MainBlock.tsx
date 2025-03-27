@@ -32,16 +32,10 @@ const MainBlock = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentTime(new Date());
+      const now = new Date();
+      setCurrentTime(now);
+      setTheme(getTheme(now));
     }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTheme(getTheme(new Date()));
-    }, 60000);
 
     return () => clearInterval(interval);
   }, []);

@@ -1,6 +1,6 @@
 import "./style.scss";
 
-const Details = ({ theme }) => {
+const Details = ({ theme = { color: "#000" } }) => {
   return (
     <div className="details" style={{ color: theme.color }}>
       <div className="detailscontent">
